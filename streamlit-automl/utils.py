@@ -133,7 +133,7 @@ def set_png_as_page_bg(png_file):
         background-color: #1d799a;
         background-image: url("data:image/png;base64,{bin_str}");
         background-position:  center bottom;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         }}
     </style>
