@@ -31,9 +31,14 @@ CREATE OR REPLACE API INTEGRATION git_api_integration_snowflake_labs
   ENABLED = TRUE;
 
 -- Create Git Repository
-CREATE OR REPLACE GIT REPOSITORY IDENTIFIER($git_repo)
-  API_INTEGRATION = git_api_integration_snowflake_labs
-  ORIGIN = 'https://github.com/Snowflake-Labs/sfguide-build-and-deploy-snowpark-ml-models-using-streamlit-snowflake-notebooks.git';
+-- CREATE OR REPLACE GIT REPOSITORY IDENTIFIER($git_repo)
+--   API_INTEGRATION = git_api_integration_snowflake_labs
+--   ORIGIN = 'https://github.com/Snowflake-Labs/sfguide-build-and-deploy-snowpark-ml-models-using-streamlit-snowflake-notebooks.git';
+
+CREATE OR REPLACE GIT REPOSITORY IDENTIFIER('ML_SIDEKICK.ST_APPS.ML_SIDEKICK_REPO')
+  API_INTEGRATION = git_api_integration_acombes
+  ORIGIN = 'https://github.com/sfc-gh-acombes/sfguide-build-and-deploy-snowpark-ml-models-using-streamlit-snowflake-notebooks.git';
+
 
 ALTER GIT REPOSITORY IDENTIFIER($git_repo) FETCH;
 

@@ -25,7 +25,7 @@ class Callbacks:
         table = f'"{st.session_state[table]}"'
         fully_qualified_name = f"{db}.{schema}.{table}"
         st.session_state["full_qualified_table_nm"] = fully_qualified_name
-        st.session_state["dataset"] = session.table(fully_qualified_name).sample(frac=1,seed=42)
+        st.session_state["dataset"] = session.table(fully_qualified_name).sample(frac=0.99,seed=42)
 
     @staticmethod
     def set_workflow(workflow_id: int):
